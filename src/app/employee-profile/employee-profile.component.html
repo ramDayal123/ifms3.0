@@ -1,0 +1,201 @@
+ <!-- Content Wrapper. Contains page content -->
+ 
+ <app-header></app-header>
+ <app-sidebar></app-sidebar>
+ 
+ <div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Empolyee Profile
+        </h1>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Empolyee Profile</a></li>
+          <li class="breadcrumb-item active">Empolyee Profile</li>
+        </ol>
+      </section>
+<section class="content">
+
+ 
+    
+    <div class="row">
+      <div class="col-12">
+       
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Data Table With Full Features</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+				<div class="">
+				  <table id="example1" class="table table-bordered table-striped table-responsive	">
+					<thead>
+						<tr>
+							<th>S.No.</th>
+							<th>First Name</th>
+							<th>Middle Name</th>
+							<th>Last Name</th>
+							<th>Gender</th>
+							<th>Date of Birth</th>
+							<th>Date of Birth In Words</th>
+							<th>Height ( cm / ft / inches )</th>
+							<th>Identification Marks</th>
+							<th>Blood Group</th>
+							<th>Father Name</th>
+							<th>Mother Name</th>
+							<th>Marital Status</th>
+							<th>Spouse Name</th>
+							<th>Disability Status</th>
+							<th>Type of Disability</th>
+							<th>Percentage of Disability</th>
+							<th>Nationality</th>
+							<th>Social Category</th>
+							<th>Belongs to Minority</th>
+							<th>Mobile No</th>
+							<th>Email Id</th>
+							<th>PAN</th>
+							<th>GRP/Pran Type</th>
+							<th>AADHAAR Ref No</th>
+							<th>State Insurance Number</th>
+							<th>RGHS No</th>
+							<th>Auction</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1.</td>
+							<td>Ram</td>
+							<td>Dayal</td>
+							<td>Bharti</td>
+							<td>Male</td>
+							<td>2011/04/25</td>
+							<td>January 1, two thousand and twenty two</td>
+							<td>5 fit 6 inch </td>
+							<td>Black</td>
+							<td>O+</td>
+							<td>Ramesh Kumar</td>
+							<td>Rita </td>
+							<td>Unmaried</td>
+							<td>Yes</td>
+							<td>50%</td>
+							<td>Indian</td>
+							<td>Web Designer</td>
+							<td>Ramesh Kumar</td>
+							<td>OBC</td>
+							<td>098765644321</td>
+							<td>ram@gmail.com</td>
+							<td>123456789012</td>
+							<td>GRP</td>
+							<td>12345</td>
+							<td>123456</td>
+							<td>1234560</td>
+							<td>1234560</td>
+							<td class="d-flex">
+								<button class="btn btn-info  btn-sm mr-2"><i class="fa fa-edit" data-toggle="modal" data-target="#exampleModalCenter"></i></button>
+								<button class="btn btn-info  btn-sm mr-2"><i class="fa fa-eye"></i></button>
+								<button class="btn btn-info  btn-sm"><i class="fa fa-trash"></i></button></td>
+						</tr>
+					
+					
+					</tbody>
+					
+				  </table>
+				</div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+                
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+
+	 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+	  <div class="modal-content">
+		<div class="modal-header" style="border-bottom: 1px solid red">
+		  <h2 class="modal-title" id="exampleModalLongTitle">Employee Profile</h2>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		
+		<div class="modal-body">
+            	<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Employee-Personal-Details" role="tab"><span class="hidden-sm-up"><i class="ion-home"></i></span> <span class="hidden-xs-down">Employee Personal Details</span></a> </li>
+					<li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Employee-Official-Details" role="tab"><span class="hidden-sm-up"><i class="ion-person"></i></span> <span class="hidden-xs-down">Employee Official Details</span></a> </li>
+					
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content tabcontent-border">
+					<div class="tab-pane active" id="Employee-Personal-Details" role="tabpanel">
+						<form>
+							<div class="row m-2 mt-5">
+							
+							  <div class="col">
+								<mat-form-field appearance="outline">
+									<mat-label>First Name</mat-label>
+									<input matInput placeholder="First Name">
+							
+									
+								  </mat-form-field>
+							  </div>
+							  <div class="col">
+								<mat-form-field appearance="outline">
+									<mat-label>Middle Name</mat-label>
+									<input matInput placeholder="Middle Name">
+									
+								
+								  </mat-form-field>
+							  </div>
+							  <div class="col">
+								<mat-form-field appearance="outline">
+									<mat-label>Last Middle Nam</mat-label>
+									<input matInput placeholder="Middle Name">
+									
+								
+								  </mat-form-field>
+							  </div>
+							 
+							</div>
+							
+					</form>
+							
+								
+					</div>
+
+
+					<div class="tab-pane pad" id="Employee-Official-Details" role="tabpanel">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</div>
+
+                  </div>
+ 
+		       </div>
+		  
+	  </div>
+	</div>
+  </div>
+  </section>
+  
+    <!-- /.content -->
+  </div>
+
+<!-- Form validator JavaScript -->
+
+
+  <app-footer></app-footer>
+
+
+  <!-- /.content-wrapper --> 
+
+
+
+
+
+
+
+	  
