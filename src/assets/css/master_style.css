@@ -6438,22 +6438,22 @@ ul.flexbox {
 }
 .info-box-icon>img {
     max-width: 100%}
-.info-box-content {
-    padding: 10px 10px 10px 0;
-    margin-left: 90px;
-}
+    .info-box-content {
+        padding: 40px 10px 42px 0;
+        margin-left: 103px;
+    }
 .info-box-number {
     font-weight: 300;
     font-size: 21px;
 }
 .info-box-text, .progress-description {
     display: block;
-    font-size: 16px;
+    font-size: 19px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
     font-weight: 400;
+    margin-bottom: 10px;
 }
 .progress-description {
     margin: 0;

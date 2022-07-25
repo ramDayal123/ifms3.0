@@ -1593,7 +1593,7 @@
 .skin-orange-light .sidebar-form input[type="text"],
 .skin-orange-light .sidebar-form .btn {
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.59);
+  /* background-color: rgba(0, 0, 0, 0.59); */
   border: 1px solid rgba(0, 0, 0, 0.59);
   height: 35px;
 }
