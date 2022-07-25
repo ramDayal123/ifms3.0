@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:'documents',component:DocumentsComponent},
   {path:'modals',component:ModalsComponent},
   {path:'signup',component:SignUpComponent},
-  // { path: 'sign-up', component:SidebarComponent},
+  { path: 'user_profile', component:UserProfileComponent},
   {path:'dashboard',component:DashboardComponent,
   children:[
     {path:'header',component:HeaderComponent},
