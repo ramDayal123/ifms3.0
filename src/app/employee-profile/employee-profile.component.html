@@ -178,24 +178,32 @@
 
                  <!--  start form page  -->
                  
-                 <form>
+                 <form [formGroup]="empPerDetForm" (ngSubmit)="onSubmit()">
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <div class="input-group mb-2 mr-sm-2">
                          <div class="input-group-prepend">
                            <div class="input-group-text">
-                             <select class="form-select" aria-label="Default select example">
+                             <select class="form-select" formControlName="salution"
+                              [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['salution'].errors}" >
                                <option selected>Mr.</option>
                                <option value="1">Mis.</option>
                              </select>
+                             <div *ngIf="submitted && empPerDetForm.controls['salution'].errors" class="text-danger">
+                              <div *ngIf="submitted && empPerDetForm.controls['salution'].errors['required']">
+                                Please Enter Mr./ Mis.
+                              </div>
+                             </div>
                            </div>
                          </div>
-                         <select class="form-select" aria-label="Default select example" class="form-control" id="">
-                           <option selected></option>
-                           <option value="1">Ram Dayal</option>
-                           <option value="2">Rakesh</option>
-                           <option value="3">Ramdayal</option>
-                         </select>
+                         <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)" formControlName="names"
+                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['names'].errors}">
+                         <div *ngIf="submitted && empPerDetForm.controls['names'].errors" class="text-danger">
+                          <div *ngIf="submitted && empPerDetForm.controls['names'].errors['required']">
+                            Please Enter Name
+                          </div>
+                         </div>
+                         
                        </div>
                      </div>
                    </div>
@@ -204,15 +212,21 @@
                      <div class="col-md-4">
                        <label>First Name <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="">
+                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)" formControlName="names"
+                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['names'].errors}">
+                         <div *ngIf="submitted && empPerDetForm.controls['names'].errors" class="text-danger">
+                          <div *ngIf="submitted && empPerDetForm.controls['names'].errors['required']">
+                            Please Enter Name
+                          </div>
+                         </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Middle Name</label>
-                       <input type="text" name="text" class="form-control" required="">
+                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)">
                      </div>
                      <div class="col-md-4">
                        <label for="">Last Name</label>
-                       <input type="text" name="text" class="form-control" required="">
+                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)">
                      </div>
                    </div>
                    <!-- 2 -->
@@ -261,11 +275,11 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Father Name </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Mother Name </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 5 -->
@@ -352,7 +366,7 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Mobile No.</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" onclick="numberOnly"  data-validation-required-message="This field is required" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Email ID</label>
@@ -375,7 +389,7 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>AADHAAR Ref No </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
                      </div>
                      <div class="col-md-4">
                        <label for="">State Insurance Number</label>
@@ -387,14 +401,14 @@
                      </div>
                    </div>
                    <div class="m-10 d-flex">
-					<div class="m-10 d-flex">
-						<button type="submit" class="btn btn-info btn-flat margin w-100">Submit</button>
-						<button type="reset" class="btn btn-danger btn-flat margin w-100" onclick="reset">Reset</button>
-					  </div>
+                    <div class="m-10 d-flex">
+                      <button type="submit" class="btn btn-info btn-flat margin w-100">Submit</button>
+                      <button type="reset" class="btn btn-danger btn-flat margin w-100" onclick="reset">Reset</button>
+                      </div>
                    </div>
                  </form>
 
-                    <!-- end  form page  -->
+                    <!-- end form page  -->
 
                </div>
                <div class="tab-pane pad" id="Employee-Official-Details" role="tabpanel">

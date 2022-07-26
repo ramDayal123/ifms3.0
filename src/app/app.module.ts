@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -23,9 +22,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-
-
+import { ReactiveFormsModule,FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -54,7 +51,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
     MatInputModule,
     MatSelectModule,
     MatRadioModule,
-    
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
