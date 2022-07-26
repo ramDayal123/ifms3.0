@@ -1598,7 +1598,7 @@
   height: 35px;
 }
 .skin-orange-light .sidebar-form input[type="text"] {
-  color: #fff;
+  color: #0d0c0c;
   border-top-left-radius: 2px;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -1606,7 +1606,7 @@
 }
 .skin-orange-light .sidebar-form input[type="text"]:focus,
 .skin-orange-light .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
-  color: #fff;
+  color: #0d0c0c;
 }
 .skin-orange-light .sidebar-form .btn {
   color: #f7f7f7;
