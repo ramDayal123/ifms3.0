@@ -183,7 +183,7 @@
                      <div class="col-md-4">
                        <div class="input-group mb-2 mr-sm-2">
                          <div class="input-group-prepend">
-                           <div class="input-group-text">
+                           <div class="input-group-text form-control">
                              <select class="form-select" formControlName="salution"
                               [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['salution'].errors}" >
                                <option selected>Mr.</option>
@@ -196,13 +196,7 @@
                              </div>
                            </div>
                          </div>
-                         <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)" formControlName="names"
-                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['names'].errors}">
-                         <div *ngIf="submitted && empPerDetForm.controls['names'].errors" class="text-danger">
-                          <div *ngIf="submitted && empPerDetForm.controls['names'].errors['required']">
-                            Please Enter Name
-                          </div>
-                         </div>
+                         <input type="text" name="text" class="form-control" pattern="^(\w\w+)\s(\w+)$" (keypress)="letterOnly($event)">
                          
                        </div>
                      </div>
@@ -212,74 +206,119 @@
                      <div class="col-md-4">
                        <label>First Name <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)" formControlName="names"
-                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['names'].errors}">
-                         <div *ngIf="submitted && empPerDetForm.controls['names'].errors" class="text-danger">
-                          <div *ngIf="submitted && empPerDetForm.controls['names'].errors['required']">
-                            Please Enter Name
+                       <input type="text" name="text" class="form-control" pattern="[a-zA-Z ]*" formControlName="firstName"
+                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['firstName'].errors}">
+                         <div *ngIf="submitted && empPerDetForm.controls['firstName'].errors" class="text-danger">
+                          <div *ngIf="submitted && empPerDetForm.controls['firstName'].errors['required']">
+                            Please Enter First Name
                           </div>
                          </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Middle Name</label>
-                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)">
+                       <input type="text" name="text" class="form-control" pattern="[a-zA-Z ]*" formControlName="middleName"
+                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['middleName'].errors}">
+                         <div *ngIf="submitted && empPerDetForm.controls['middleName'].errors" class="text-danger">
+                          <div *ngIf="submitted && empPerDetForm.controls['middleName'].errors['required']">
+                            Please Enter Middle  Name 
+                          </div>
+                         </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Last Name</label>
-                       <input type="text" name="text" class="form-control" required="" (keypress)="letterOnly($event)">
+                       <input type="text" name="text" class="form-control" pattern="[a-zA-Z ]*" formControlName="lastName"
+                         [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['lastName'].errors}">
+                         <div *ngIf="submitted && empPerDetForm.controls['lastName'].errors" class="text-danger">
+                          <div *ngIf="submitted && empPerDetForm.controls['lastName'].errors['required']">
+                            Please Enter Last  Name 
+                          </div>
+                         </div>
                      </div>
                    </div>
                    <!-- 2 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Gender </label>
-                       <select class="form-select" aria-label="Default select example" class="form-control" id="">
-                         <option selected>Select Gender</option>
-                         <option value="1">Male</option>
-                         <option value="2">Female</option>
-                         <option value="3">Other</option>
-                       </select>
+                          <select class="form-select form-control" formControlName="gender"
+                              [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['gender'].errors}" >
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Other</option>
+                             </select>
+                             <div *ngIf="submitted && empPerDetForm.controls['gender'].errors" class="text-danger">
+                              <div *ngIf="submitted && empPerDetForm.controls['gender'].errors['required']">
+                                Please Enter Gender 
+                              </div>
+                             </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Date of Birth <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" formControlName="date"[ngClass]="{'is-invalid':submitted && empPerDetForm.controls['date'].errors}">
+                       <div *ngIf="submitted && empPerDetForm.controls['date'].errors" class="text-danger">
+                        <div *ngIf="submitted && empPerDetForm.controls['date'].errors['required']">
+                          Please Enter Date
+                        </div>
+                       </div>
                      </div>
+                     
                      <div class="col-md-4">
                        <label for="">Date of Birth In Words</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="word" class="form-control" formControlName="word" [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['word'].errors}">
+
+                       <div *ngIf="submitted && empPerDetForm.controls['word'].errors" class="text-danger">
+                        <div *ngIf="submitted && empPerDetForm.controls['word'].errors['required']">
+                          Please Enter Date
+                        </div>
+                       </div>
                      </div>
                    </div>
                    <!-- 3 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Height ( cm / ft / inches ) </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="height" class="form-control" formControlName="height" [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['height'].errors}">
+                       <div *ngIf="submitted && empPerDetForm.controls['height'].errors" class="text-danger">
+                        <div *ngIf="submitted && empPerDetForm.controls['height'].errors['required']">
+                          Please Enter Height ( cm / ft / inches ) 
+                        </div>
+                       </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Identification Marks <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="Identification" class="form-control" formControlName="Identification" [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['Identification'].errors}">
+                       <div *ngIf="submitted && empPerDetForm.controls['Identification'].errors" class="text-danger">
+                        <div *ngIf="submitted && empPerDetForm.controls['Identification'].errors['required']">
+                          Please Enter Identification Marks 
+                        </div>
+                       </div>
                      </div>
                      <div class="col-md-4">
                        <label for="">Blood Group</label>
-                       <select class="form-select" aria-label="Default select example" class="form-control" id="">
-                         <option selected>Blood Group</option>
-                         <option value="1">O-</option>
-                         <option value="2">B+</option>
-                         <option value="3">AB</option>
-                       </select>
+                       <select class="form-select form-control" formControlName="Blood_Group"
+                       [ngClass]="{'is-invalid':submitted && empPerDetForm.controls['gender'].errors}" >
+                       <option value="1">O-</option>
+                       <option value="2">B+</option>
+                       <option value="3">AB</option>
+                      </select>
+                      <div *ngIf="submitted && empPerDetForm.controls['Blood_Group'].errors" class="text-danger">
+                       <div *ngIf="submitted && empPerDetForm.controls['Blood_Group'].errors['required']">
+                         Please Enter Blood Group
+                       </div>
+                      </div>
                      </div>
                    </div>
                    <!-- 4 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Father Name </label>
-                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false">
-                     </div>
+                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" aria-invalid="false">
+                          
+                      </div>
                      <div class="col-md-4">
                        <label for="">Mother Name </label>
-                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" (keypress)="letterOnly($event)" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 5 -->
@@ -295,7 +334,7 @@
                      </div>
                      <div class="col-md-4">
                        <label for="">Spouse Name</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 6 -->
@@ -324,7 +363,7 @@
                      </div>
                      <div class="col-md-4">
                        <label for="">Percentage of Disability</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 7 -->
@@ -366,15 +405,15 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Mobile No.</label>
-                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" onclick="numberOnly"  data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" onclick="numberOnly"  aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Email ID</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">PAN</label>
-                       <input type="text" name="text" class="form-control" required="" placeholder="QWERTY1234M " data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" placeholder="QWERTY1234M " aria-invalid="false">
                      </div>
                    </div>
                    <!-- 9 -->
@@ -382,22 +421,22 @@
                      <div class="col-md-4">
                        <label>GRP/Pran Type <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                    </div>
                    <!-- 10 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>AADHAAR Ref No </label>
-                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" (keypress)="numberOnly($event)" required="" aria-invalid="false" disabled>
                      </div>
                      <div class="col-md-4">
                        <label for="">State Insurance Number</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                      <div class="col-md-4">
                        <label for="">RGHS No.</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                    </div>
                    <div class="m-10 d-flex">
@@ -417,23 +456,23 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Entitlement Status </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 1 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Employee Type </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Service Category <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Sub Service Category/cadre </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 2 -->
@@ -493,16 +532,16 @@
                      <div class="col-md-4">
                        <label>Appointment Order No. <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Appointment Order Date <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Order Issuing Authority / Office </label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 5 -->
@@ -510,16 +549,16 @@
                      <div class="col-md-4">
                        <label>Appointing Authority <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Joining / Charge Taken Date <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Joining Time</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 6 -->
@@ -527,12 +566,12 @@
                      <div class="col-md-4">
                        <label for="">Annual Increment Opted Date <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Superanuation Date <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Belongs to Minority</label>
@@ -553,39 +592,39 @@
                      <div class="col-md-4">
                        <label>GRP/Pran Type <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">State Insurance Number <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">RGHS No.</label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 8 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>GPF No.</label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Belt No. <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="date" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="date" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">PLI No.</label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 9 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>I.A.S CPNF No.</label>
-                       <input type="text" name="text" class="form-control" disabled required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" disabled required="" aria-invalid="false">
                      </div>
                    </div>
                    <div class="m-10 d-flex">
@@ -709,23 +748,23 @@
                      <div class="col-md-4">
                        <label for="">Date of Birth <span class="text-red">*</span>
                        </label>
-                       <input type="date" name="date" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="date" name="date" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Date of Birth In Words</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 3 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Height ( cm / ft / inches ) </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Identification Marks <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Blood Group</label>
@@ -741,11 +780,11 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Father Name </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Mother Name </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 5 -->
@@ -761,7 +800,7 @@
                      </div>
                      <div class="col-md-4">
                        <label for="">Spouse Name</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 6 -->
@@ -790,7 +829,7 @@
                      </div>
                      <div class="col-md-4">
                        <label for="">Percentage of Disability</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                    </div>
                    <!-- 7 -->
@@ -832,15 +871,15 @@
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>Mobile No.</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">Email ID</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false">
                      </div>
                      <div class="col-md-4">
                        <label for="">PAN</label>
-                       <input type="text" name="text" class="form-control" required="" placeholder="QWERTY1234M " data-validation-required-message="This field is required" aria-invalid="false">
+                       <input type="text" name="text" class="form-control" required="" placeholder="QWERTY1234M " aria-invalid="false">
                      </div>
                    </div>
                    <!-- 9 -->
@@ -848,18 +887,18 @@
                      <div class="col-md-4">
                        <label>GRP/Pran Type <span class="text-red">*</span>
                        </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                    </div>
                    <!-- 10 -->
                    <div class="row m-2 mt-5">
                      <div class="col-md-4">
                        <label>AADHAAR Ref No </label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                      <div class="col-md-4">
                        <label for="">State Insurance Number</label>
-                       <input type="text" name="text" class="form-control" required="" data-validation-required-message="This field is required" aria-invalid="false" disabled>
+                       <input type="text" name="text" class="form-control" required="" aria-invalid="false" disabled>
                      </div>
                      <div class="col-md-4">
                        <label for="">RGHS No.</label>

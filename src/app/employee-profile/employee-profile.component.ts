@@ -17,7 +17,19 @@ export class EmployeeProfileComponent implements OnInit {
   ngOnInit(){
     this.empPerDetForm = this.formbuilder.group({
       salution: ['',Validators.required],
-      names: ['',Validators.required]
+      firstName: ['', [Validators.required]],
+      middleName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      gender: ['',Validators.required],
+      date: ['',Validators. required ],
+      word: ['',Validators. required ],
+      height: ['',Validators. required ],
+      Identification: ['',Validators. required ],
+      Blood_Group: ['',Validators. required ],
+      
+
+
+      
     });
 
 
